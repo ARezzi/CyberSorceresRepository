@@ -17,6 +17,9 @@ jobs:
     steps:
       - name: Check out Git repository
         uses: actions/checkout@v2
+      - name: Install aspell
+        run: |
+          apt install -y aspell aspell-it
       - name: Run aspell
         run: |
            aspell/aspell.py documenti/*.tex > annotations.json
